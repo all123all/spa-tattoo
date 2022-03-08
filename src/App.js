@@ -1,18 +1,17 @@
 import './App.css';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { FaArrowDown } from "react-icons/fa";
 
 const App = () => {
-  //change to const after
-  var [countDays, setCountDays] = useState();
-  var [countHours, setCountHours] = useState();
-  var [countMinutes, setCountMinutes] = useState();
-  var [countSeconds, setCountSeconds] = useState();
-
+  //Countdown algorithm
+  const [countDays, setCountDays] = useState();
+  const [countHours, setCountHours] = useState();
+  const [countMinutes, setCountMinutes] = useState();
+  const [countSeconds, setCountSeconds] = useState();
   let timeInterval;
 
   const startTimer = () => {
-    const deadlineDate = new Date("May 25, 2023").getTime();
+    const deadlineDate = new Date("May 25, 2022").getTime();
     const timeInterval = setInterval(() => {
       const nowDate = new Date().getTime();
       const timeDifference = deadlineDate - nowDate;
@@ -33,32 +32,30 @@ const App = () => {
       }
     })
   }
-
   useEffect(()=>{
     startTimer();
   });
-
   return (
     <div className="main-container">
-      <div className="clock">
+      <section className="clock">
         <div className="header-container">
           <h1 className="header-title">Middle-Earth Tattoo Workshop</h1>
         </div>
         <div className="clock-info">
           <div className="clock-subcont">
-            <p className="clock-num">{countDays}:</p>
+            <p className="clock-num">{countDays}</p>
             <p className="clock-desc">Days</p>
           </div>
           <div className="clock-subcont">
-            <p className="clock-num">{countHours}:</p>
+            <p className="clock-num">:{countHours}</p>
             <p className="clock-desc">Hours</p>
           </div>
           <div className="clock-subcont">
-            <p className="clock-num">{countMinutes}:</p>
+            <p className="clock-num">:{countMinutes}</p>
             <p className="clock-desc">Minutes</p>
           </div>
           <div className="clock-subcont">
-            <p className="clock-num">{countSeconds}</p>
+            <p className="clock-num">:{countSeconds}</p>
             <p className="clock-desc">Seconds</p>
           </div>
         </div>
@@ -73,7 +70,7 @@ const App = () => {
             <input type="button" value="Go!" className="subscribe-button"/>
           </div>          
         </div>
-      </div>      
+      </section>      
     </div>
   )
 }

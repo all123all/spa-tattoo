@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
 * {
   margin: 0;
   padding: 0;
   font-size: 62.5%; /* 1rem = 10px */
+  font-family: 'Josefin Sans';
 }
 .main-container {
   height: 100vh;
@@ -11,21 +14,18 @@
   justify-content: center;
   align-items: center;
 }
-.header {
-
-}
 .header-title {
-  font-size: 6rem;
+  font-size: 10rem;
   color: #fff;
+  text-align: center;
 }
 .clock {
   display: flex;
   flex-direction: column;
   height: 85vh;
   width: 85vw;
-  background-color: #696969;
-  background-image: url('./img/tat-bg.jpg');
-  background-position: top;
+  background-image: url('./img/5.jpg');
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: space-around;
@@ -50,23 +50,22 @@
 .clock-desc {
   color: #fff;
   font-size: 3rem;
-  font-weight: lighter;
 }
 .subscribe-container {
   color: #fff;
   text-align: center;
 }
 .subscribe-description-head {
-  font-size: 3rem;
+  font-size: 5rem;
   margin-top: 1rem;
 }
 .subscribe-description-text {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 .subscribe-input-container {
-  font-size: 3rem;
+  font-size: 5rem;
   margin-top: 2rem;
-  width: 35vw;
+  width: 65vw;
 }
 .subscribe-input {
   border-radius: 2.5rem 0 0 2.5rem;
@@ -81,13 +80,62 @@
   padding: 1rem 4rem;
   border: 0;
 }
+@media(max-width: 1300px){
+  .header-title {
+    text-align: center;
+    font-size: 7rem;
+  }
+  .clock-num {
+    font-size: 12rem;
+  }
+}
 /* Ipad */
-/* @media(max-width: 810px){
-  .main-container {
-    width: 100vw;
-    height: 100vh;
+@media(max-width: 1050px){
+  .clock-num {
+    font-size: 8rem;
+    flex-wrap: wrap;
   }
-  .clock {
-    width: 50vw;
+  .subscribe-input-container {
+    width: 85vw;
   }
-} */
+}
+@media(max-width:428px){
+  .header-title {
+    font-size: 3.4rem;
+  }
+  .clock-num {
+    font-size: 3.5rem;
+  }
+  .clock-info {
+    width: 85vw;
+    justify-content: space-evenly;
+  }
+  .clock-desc {
+    font-size: 1.6rem;
+  }
+  .subscribe-description-head {
+    font-size: 3rem;
+    margin-bottom: 1vh;
+  }
+  .subscribe-description-text {
+    font-size: 1.7rem;
+  }
+  .subscribe-input-container {
+    width: 95vw;
+  }
+}
+/* Iphone SE */
+@media(max-width: 375px){
+  .header-title {
+    font-size: 3rem;
+  }
+  .clock-num {
+    font-size: 4rem;
+  }
+  .subscribe-input {
+    font-size: 2rem;
+  }
+  .subscribe-button {
+    font-size: 2rem;
+  }
+}
